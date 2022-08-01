@@ -1,0 +1,14 @@
+<div class="container">
+    <section class="search">
+        <input type="text" placeholder='Search for an artist…' (change)="onchange($event)" />
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </section>
+</div>
+
+<!-- <div class="container">
+    <section class="search">
+        <input [(ngModel)]="search_input2" (input)="sendTheNewValue($event)">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </section>
+</div>
+<p *ngFor="let item of collection">{{item.name}}</p> -->

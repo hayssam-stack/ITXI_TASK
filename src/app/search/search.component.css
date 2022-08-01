@@ -1,0 +1,33 @@
+
+.search {
+    display: flex;
+    width: 400px;
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    padding: 15px 25px;
+    text-align: center;
+    margin: 25% 35%;
+}
+
+.search > input {
+    margin-right: auto;
+    margin-left: auto;
+    border: 0px ;
+}
+.search > input:focus {
+    outline: none;
+    border: 0px ;
+}
+
+.search > button {
+    margin-right: 0px;
+    background-color: #fff;
+    border: 0px ;
+    font-size: 20px;
+    color: #8f8f8f;
+}
+
+.search > button:hover {
+   cursor: pointer;
+
+}

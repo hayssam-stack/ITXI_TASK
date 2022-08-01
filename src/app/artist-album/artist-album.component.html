@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>{{artist_name}}</h1>
+    <small class="text-muted">Albums</small>
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6  col-xs-12 col-6" style=" margin: 0px auto;" *ngFor="let item of collection">
+            <div class="card w-100 " style="width: auto; margin: 0.5rem;height: 97%;">
+                <img src="{{item.images[0].url}}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.name}}</h5>
+                    <small class="text-muted" *ngFor="let artist of item.artists">{{artist.name}} </small>
+                 </div>
+                <blockquote class="mb-0">
+                    <div class="block-footer container">
+                        <small class="text-muted">{{item.release_date}}</small>
+                    <br>
+                    <small class="text-muted">{{item.total_tracks}} tracks</small>
+                    </div>
+                  </blockquote>
+                <a href="{{item.external_urls.spotify}}" style="text-decoration:none ;">
+                    <div class="card-footer" style="text-align:center ;">
+                        <small class="text-muted"> Preview on Spotify</small>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="container">
+    <section class="search">
+        <input type="text" placeholder='Search for an artist…' (change)="onchange($event)" />
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </section>
+</div>
+
+    <div class="container " >
+        <div class="row " >
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style=" margin: 0px auto;" *ngFor="let item of collection">
+                <a routerLink="../../album/{{item.uri}}" style="text-decoration:none ;color:black">
+                    <div class="card w-100 " style="width: auto; margin: 0.5rem ; height: 97%; ">
+                        <img src="{{item.images[1].url}}" style="height: auto;"
+                            class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{item.name}}</h5>
+                            <small class="text-muted">{{item.followers.total}} followers</small>
+                        </div>
+
+                        <div class="block-footer container">
+                            <p *ngIf="item.popularity <20">
+                                <i class="fa fa-star" style="font-size:20px"></i>
+                                <i class="fa fa-star-o" style="font-size:20px"></i>
+                                <i class="fa fa-star-o" style="font-size:20px"></i>
+                                <i class="fa fa-star-o" style="font-size:20px"></i>
+                                <i class="fa fa-star-o" style="font-size:20px"></i>
+                            </p>
+                            <p *ngIf="item.popularity <40 && item.popularity >=20">
+                                <i class="fa fa-star" style="font-size:20px"></i>
+                                <i class="fa fa-star" style="font-size:20px"></i>
+                                <i class="fa fa-star-o" style="font-size:20px"></i>
+                                <i class="fa fa-star-o" style="font-size:20px"></i>
+                                <i class="fa fa-star-o" style="font-size:20px"></i>
+                            </p>
+                            <p *ngIf="item.popularity <60 && item.popularity >=40">
+                                <i class="fa fa-star" style="font-size:20px"></i>
+                                <i class="fa fa-star" style="font-size:20px"></i>
+                                <i class="fa fa-star" style="font-size:20px"></i>
+                                <i class="fa fa-star-o" style="font-size:20px"></i>
+                                <i class="fa fa-star-o" style="font-size:20px"></i>
+                            </p>
+                            <p *ngIf="item.popularity <80 && item.popularity >=60">
+                                <i class="fa fa-star" style="font-size:20px"></i>
+                                <i class="fa fa-star" style="font-size:20px"></i>
+                                <i class="fa fa-star" style="font-size:20px"></i>
+                                <i class="fa fa-star" style="font-size:20px"></i>
+                                <i class="fa fa-star-o" style="font-size:20px"></i>
+                            </p>
+                            <p *ngIf="item.popularity <=100 && item.popularity >=80">
+                                <i class="fa fa-star" style="font-size:20px"></i>
+                                <i class="fa fa-star" style="font-size:20px"></i>
+                                <i class="fa fa-star" style="font-size:20px"></i>
+                                <i class="fa fa-star" style="font-size:20px"></i>
+                                <i class="fa fa-star" style="font-size:20px"></i>
+                            </p>
+
+                        </div>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+    
